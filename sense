@@ -1,4 +1,5 @@
 -- just incase
+-- I don't think it supports sirhurt.
 
 -- services
 local runService = game:GetService("RunService");
