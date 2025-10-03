@@ -35,9 +35,9 @@ local ThemeManager = {} do
 	ThemeManager.Library = nil
 	ThemeManager.BuiltInThemes = {
 		['Default'] = { 1, httpService:JSONDecode('{"FontColor":"f0d3c8","MainColor":"0b0b0b","AccentColor":"ff5656","BackgroundColor":"080808","OutlineColor":"141414","Glowcolor":"ff5656"}') },
-    ['Lucid.bid'] = { 2, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"0b1220","AccentColor":"f59e0b","BackgroundColor":"0f172a","OutlineColor":"1e293b","Glowcolor":"f59e0b"}') },
+	    ['Lucid.bid'] = { 2, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"0b1220","AccentColor":"f59e0b","BackgroundColor":"0f172a","OutlineColor":"1e293b","Glowcolor":"f59e0b"}') },
 		['Fatality'] = { 3, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"1e1842","AccentColor":"c50754","BackgroundColor":"191335","OutlineColor":"3c355d","Glowcolor":"c50754"}') },
-		['Tokyo Night'] = { 4, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"191925","AccentColor":"6759b3","BackgroundColor":"16161f","OutlineColor":"323232","Glowcolor":"6759b3"}') },
+		['Tokyo Night'] = { 4, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"0b0712","AccentColor":"8a5ff6","BackgroundColor":"05040b","OutlineColor":"1a052a","Glowcolor":"8a5ff6"}') },
 		['Quartz'] = { 5, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"232330","AccentColor":"426e87","BackgroundColor":"1d1b26","OutlineColor":"27232f","Glowcolor":"426e87"}') },
 	}
 
