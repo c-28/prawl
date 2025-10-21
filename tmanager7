@@ -31,14 +31,15 @@ if typeof(copyfunction) == "function" then
 end
 
 local ThemeManager = {} do
-	ThemeManager.Folder = 'LinoriaLibSettings'
+	ThemeManager.Folder = 'Prawl_DEV1'
 	ThemeManager.Library = nil
 	ThemeManager.BuiltInThemes = {
 		['Default'] = { 1, httpService:JSONDecode('{"FontColor":"f0d3c8","MainColor":"0b0b0b","AccentColor":"ff5656","BackgroundColor":"080808","OutlineColor":"141414","Glowcolor":"ff5656"}') },
 	    ['Lucid.bid'] = { 2, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"0b1220","AccentColor":"f59e0b","BackgroundColor":"0f172a","OutlineColor":"1e293b","Glowcolor":"f59e0b"}') },
-		['Fatality'] = { 3, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"1e1842","AccentColor":"c50754","BackgroundColor":"191335","OutlineColor":"3c355d","Glowcolor":"c50754"}') },
-		['Night'] = { 4, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"0b0712","AccentColor":"8a5ff6","BackgroundColor":"05040b","OutlineColor":"1a052a","Glowcolor":"8a5ff6"}') },
-		['Quartz'] = { 5, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"232330","AccentColor":"426e87","BackgroundColor":"1d1b26","OutlineColor":"27232f","Glowcolor":"426e87"}') },
+		['Fatality'] = { 3, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"221b46","AccentColor":"d74a7a","BackgroundColor":"181233","OutlineColor":"342e57","Glowcolor":"d74a7a"}') },
+		['Night'] = { 4, httpService:JSONDecode('{"FontColor":"eaeaea","MainColor":"0e0918","AccentColor":"9d6df7","BackgroundColor":"08060e","OutlineColor":"1f1433","Glowcolor":"9d6df7"}') },
+		['Quartz'] = { 5, httpService:JSONDecode('{"FontColor":"d7dde6","MainColor":"1b1d23","AccentColor":"5ac8fa","BackgroundColor":"121317","OutlineColor":"2b2e34","Glowcolor":"5ac8fa"}') },
+		['OneTap'] = { 6, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"1a1c24","AccentColor":"dba54e","BackgroundColor":"111318","OutlineColor":"2a2d36","Glowcolor":"dba54e"}') },
 	}
 
 	function ThemeManager:SetLibrary(library) self.Library = library
@@ -107,12 +108,12 @@ local ThemeManager = {} do
 	end
 
 	function ThemeManager:CreateThemeManager(groupbox)
-		groupbox:AddLabel('Background color'):AddColorPicker('BackgroundColor', { Default = self.Library.BackgroundColor });
-		groupbox:AddLabel('Main color'):AddColorPicker('MainColor', { Default = self.Library.MainColor });
-		groupbox:AddLabel('Accent color'):AddColorPicker('AccentColor', { Default = self.Library.AccentColor });
-		groupbox:AddLabel('Outline color'):AddColorPicker('OutlineColor', { Default = self.Library.OutlineColor });
-		groupbox:AddLabel('Font color'):AddColorPicker('FontColor', { Default = self.Library.FontColor });
-		groupbox:AddLabel('Glow color'):AddColorPicker('Glowcolor', { Default = self.Library.Glowcolor });
+		groupbox:AddLabel('Background Color'):AddColorPicker('BackgroundColor', { Default = self.Library.BackgroundColor });
+		groupbox:AddLabel('Main Color'):AddColorPicker('MainColor', { Default = self.Library.MainColor });
+		groupbox:AddLabel('Accent Color'):AddColorPicker('AccentColor', { Default = self.Library.AccentColor });
+		groupbox:AddLabel('Outline Color'):AddColorPicker('OutlineColor', { Default = self.Library.OutlineColor });
+		groupbox:AddLabel('Font Color'):AddColorPicker('FontColor', { Default = self.Library.FontColor }); -- changed color in all this to capital
+		groupbox:AddLabel('Glow Color'):AddColorPicker('Glowcolor', { Default = self.Library.Glowcolor });
 		
 		local ThemesArray = {}
 		for Name, Theme in next, self.BuiltInThemes do
@@ -121,10 +122,10 @@ local ThemeManager = {} do
 		table.sort(ThemesArray, function(a, b) return self.BuiltInThemes[a][1] < self.BuiltInThemes[b][1] end)
 
 		groupbox:AddDivider()
-		groupbox:AddDropdown('ThemeManager_ThemeList', { Text = 'Theme list', Values = ThemesArray, Default = 1 })
+		groupbox:AddDropdown('ThemeManager_ThemeList', { Text = 'Theme List', Values = ThemesArray, Default = 1 })
 		groupbox:AddButton('Set as default', function()
 			self:SaveDefault(self.Library.Options.ThemeManager_ThemeList.Value)
-			self.Library:Notify(string.format('Set default theme to %q', self.Library.Options.ThemeManager_ThemeList.Value))
+			self.Library:Notify(string.format('set default theme to %q', self.Library.Options.ThemeManager_ThemeList.Value)) -- make notifs lowercase
 		end)
 
 		self.Library.Options.ThemeManager_ThemeList:OnChanged(function()
