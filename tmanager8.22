@@ -1,4 +1,4 @@
---tmanager 8.21
+--tmanager 8.22
 -- fixed sirhurt
 local cloneref = (cloneref or clonereference or function(instance: any) return instance end)
 local httpService = cloneref(game:GetService('HttpService'))
@@ -40,7 +40,7 @@ local ThemeManager = {} do
 		['Fatality'] = { 3, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"221b46","AccentColor":"d74a7a","BackgroundColor":"181233","OutlineColor":"342e57","Glowcolor":"d74a7a"}') },
 		['Night'] = { 4, httpService:JSONDecode('{"FontColor":"eaeaea","MainColor":"0e0918","AccentColor":"9d6df7","BackgroundColor":"08060e","OutlineColor":"1f1433","Glowcolor":"9d6df7"}') },
 		['Quartz'] = { 5, httpService:JSONDecode('{"FontColor":"d7dde6","MainColor":"1b1d23","AccentColor":"5ac8fa","BackgroundColor":"121317","OutlineColor":"2b2e34","Glowcolor":"5ac8fa"}') },
-		['OneTap'] = { 6, httpService:JSONDecode('{"FontColor":"f2ede3","MainColor":"1b1c22","AccentColor":"dca85b","BackgroundColor":"121317","OutlineColor":"2a2b33","Glowcolor":"dca85b"}') },
+		['OneTap'] = { 6, httpService:JSONDecode('{"FontColor":"f0efeb","MainColor":"1a1b20","AccentColor":"d8a24f","BackgroundColor":"111215","OutlineColor":"2b2c31","Glowcolor":"d8a24f"}') },
 	}
 
 	function ThemeManager:SetLibrary(library) self.Library = library
