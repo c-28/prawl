@@ -122,6 +122,7 @@ end
             "ThemeManager_ThemeList", 'ThemeManager_CustomThemeList', 'ThemeManager_CustomThemeName', -- themes
             "VideoLink",
 			"Tabnotifslocalidk1","Watermarktoggle","MenuKeybind",'Notifssidedropdownidk1','SigmaskibiditoiletfontchangerinmangosohioOK', -- ui settings stuff
+            "Sigmacspy", "Espprev", "Backgroundimagesss", "Blurbackground" -- chat spy esp preview background images blur background
         })
     end
 
@@ -483,7 +484,7 @@ section:AddButton('Create Config', function()
                 return self.Library:Notify('failed to set autoload config: ' .. err)
             end
 
-            SaveManager.AutoloadLabel:SetText('Autoloading config: ' .. name)
+            SaveManager.AutoloadLabel:SetText('Autoloading Config: ' .. name)
             self.Library:Notify(string.format('set %q to auto load', name))
         end)
         section:AddButton('Reset autoload', function()
@@ -493,10 +494,10 @@ section:AddButton('Create Config', function()
             end
 
             self.Library:Notify('set autoload to none')
-            SaveManager.AutoloadLabel:SetText('Autoloading config: none')
+            SaveManager.AutoloadLabel:SetText('Autoloading Config: none')
         end)
 
-        self.AutoloadLabel = section:AddLabel("Autoloading config: " .. self:GetAutoloadConfig(), true)
+        self.AutoloadLabel = section:AddLabel("Autoloading Config: " .. self:GetAutoloadConfig(), true)
 
         -- self:LoadAutoloadConfig()
         self:SetIgnoreIndexes({ 'SaveManager_ConfigList', 'SaveManager_ConfigName' })
